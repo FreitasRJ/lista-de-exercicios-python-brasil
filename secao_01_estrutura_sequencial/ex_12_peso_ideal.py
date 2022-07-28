@@ -22,7 +22,7 @@ def calcular_peso_ideal():
     try:
         altura = float(input('Informe a altura em metros: ')) 
         peso_ideal = (72.7*altura) - 58
-        print(f'Seu peso ideal é {peso_ideal:.1f} kg ')       
+        print(f'Seu peso ideal é {peso_ideal:.1f} kg')       
     except ValueError:
         print('Valor inválido!!!')
 
