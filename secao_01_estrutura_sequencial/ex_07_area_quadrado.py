@@ -27,3 +27,4 @@ def calcular_area_de_quadrado():
     print(mensagem) 
     
     # A palavra área foi deixada com a grafia 'aŕea' para não alterar no teste.
+#calcular_area_de_quadrado()
