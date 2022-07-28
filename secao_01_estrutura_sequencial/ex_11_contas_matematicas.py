@@ -36,7 +36,7 @@ def calcular_formulas():
     except ValueError:
         print('Entrada inválida!!!')
     
-# calcular_formulas()
+#calcular_formulas()
     
     
      
