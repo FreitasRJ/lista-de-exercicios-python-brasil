@@ -16,5 +16,21 @@ Faça um Programa que leia três números e mostre-os em ordem decrescente.
 """
 
 
-def ordenar_decrescente(x, y, z):
+def ordenar_decrescente(n1, n2, n3):
     """Escreva aqui em baixo a sua solução"""
+    if round(n1) == n1:
+        n1 = round(n1)
+    if round(n2) ==n2:
+        n2 = round(n2)
+    if round(n3) == n3:
+        n3 = round(n3)    
+                  
+    if n1 < n3:
+        n1, n3 =  n3, n1 
+    if n1 < n2:
+        n1, n2 = n2, n1 
+    if n2 < n3:
+        n2, n3 = n3, n2
+
+    return print(f'{n1}, {n2}, {n3}')
+#ordenar_decrescente(2,3,5)    

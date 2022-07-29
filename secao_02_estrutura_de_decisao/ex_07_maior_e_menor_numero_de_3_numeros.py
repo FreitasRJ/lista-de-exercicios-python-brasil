@@ -19,5 +19,17 @@ Faça um Programa que leia três números e mostre o maior e o menor deles.
 """
 
 
-def calcular_maior_de_3_numeros(x, y, z):
+def calcular_maior_de_3_numeros(a, b, c):
     """Escreva aqui em baixo a sua solução"""
+    if a > b:
+        a,b = b,a
+    if b > c:
+        b,c = c,b
+    if a > c:
+        a,c = c,b
+    if a > b:
+        a,b = b,a
+    menor = a
+    maior = c
+    return print(f'Maior: {maior}\n' + f'Menor: {menor}')
+#calcular_maior_de_3_numeros(7, 3, 4)

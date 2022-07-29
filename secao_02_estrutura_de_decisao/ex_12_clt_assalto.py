@@ -53,3 +53,106 @@ até R$ 99999,99
 
 def calcular_salario_liquido(valor_hora: float, horas_trabalhadas: int):
     """Escreva aqui em baixo a sua solução"""
+    def alinha_saida_valores_no_print(numero: float, num_caracteres: int):
+        ''' Resulta em alinhamento das colunas de impressão de valores com número
+        de caracteres diferente. Retornando uma string do tamanho indicado em
+        num_caracters.
+
+        Em meu aprendizado só fui conhecer o metodo de formatação depois.
+        https://docs.python.org/pt-br/3/tutorial/inputoutput.html#fancier-output-formatting
+        Mas foi válido pelo aprendizado.
+
+        '''
+            
+        num_str = str(numero)
+        tamanho = len(num_str)
+        posicao = 0
+        inteiro = ''
+
+        while posicao < tamanho and num_str[posicao] != '.':
+            inteiro += num_str[posicao]
+            posicao += 1      
+                
+        if posicao == tamanho:
+            num_str += '.00'
+            
+        elif posicao == tamanho - 2:
+            num_str += '0'
+            
+        elif num_str[posicao] == '.' and tamanho - posicao - 1 >= 2:
+            num_str = inteiro + num_str[posicao] + num_str[posicao + 1] + num_str[posicao + 2]       
+              
+        
+        num_espacos = num_caracteres - posicao
+        num_espacos_str = ' ' * num_espacos
+
+        saida = num_espacos_str + num_str  
+        return saida
+
+    def alinha_a_direita(dado: str, num_caracteres: int):
+        ''' Resulta em alinhamento das colunas de impressão de valores com número
+              de caracteres diferente. Retornando uma string do tamanho indicado em
+              num_caracters.
+          '''
+              
+        tamanho = len(dado)
+        inteiro = ''
+
+        num_espacos = num_caracteres - tamanho
+        num_espacos_str = ' ' * num_espacos
+        alinhado = num_espacos_str + dado  
+        return alinhado
+
+
+
+    quant_hora = horas_trabalhadas
+    salario_bruto = valor_hora * quant_hora
+    if salario_bruto <= 900:
+        ir = 0
+        ir_por = '0'
+    elif salario_bruto <= 1500:
+        ir = (salario_bruto * .05)
+        ir_por = '5'
+    elif salario_bruto <= 2500:
+        ir = (salario_bruto * .1)
+        ir_por = '10'
+    elif salario_bruto > 2500:
+        ir = (salario_bruto * .2)
+        ir_por = '20'
+    inss = salario_bruto * .1
+    sindicato = salario_bruto * .03
+    fgts = salario_bruto * .11
+    total_descontos = ir + inss + sindicato
+    salario_liquido = salario_bruto- total_descontos
+
+    inss_alinhado = alinha_saida_valores_no_print(inss, 5)
+    sindicato_alinhado = alinha_saida_valores_no_print(sindicato, 5)
+    fgts_alinhado =alinha_saida_valores_no_print(fgts, 5)
+    total_descontos_alinhado = alinha_saida_valores_no_print(total_descontos, 5)
+    salario_liquido_alinhado = alinha_saida_valores_no_print(salario_liquido, 5)
+    ir_alinhado = alinha_saida_valores_no_print(ir, 5)
+    salario_bruto_alinhado = alinha_saida_valores_no_print(salario_bruto, 5)
+    valor_hora_alinhado = alinha_saida_valores_no_print(valor_hora, 1)
+    #ir_por = alinha_a_direita(ir_por, 2)
+    quant_hora = alinha_a_direita(str(quant_hora), 3)
+        
+    espaço = len(valor_hora_alinhado) + len(quant_hora)
+    x = 12 - espaço
+    espaço = x * " "
+    
+    resposta = f'Salário Bruto: (R$ {valor_hora_alinhado} * {quant_hora}){espaço}: R$ {salario_bruto_alinhado}\n'
+    if ir_por == '0' or ir_por == '5':
+        resposta += f'(-) IR ({ir_por}%)                        : R$ {ir_alinhado}\n'
+    else:
+        resposta += f'(-) IR ({ir_por}%)                       : R$ {ir_alinhado}\n'
+    resposta += f'(-) INSS (10%)                     : R$ {inss_alinhado}\n'
+    resposta += f'(-) Sindicato (3%)                 : R$ {sindicato_alinhado}\n'
+    resposta += f'FGTS (11%)                         : R$ {fgts_alinhado}\n'
+    resposta += f'Total de descontos                 : R$ {total_descontos_alinhado}\n'
+    resposta += f'Salário Liquido                    : R$ {salario_liquido_alinhado}'
+
+
+    return print(resposta)
+
+#calcular_salario_liquido(1,160)
+
