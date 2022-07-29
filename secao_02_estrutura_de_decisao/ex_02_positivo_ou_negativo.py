@@ -17,3 +17,18 @@ Faça um Programa que peça um valor e mostre na tela se o valor é positivo ou 
 
 def positivo_ou_negativo(n):
     """Escreva aqui em baixo a sua solução"""
+    try:
+
+        #n = float(input('Digite um número: '))
+        if n > 0:
+            num = "'positivo'"
+        elif n < 0:
+            num = "'negativo'"
+        else:
+            num = "'não tem positivo nem negativo'"
+        print(num)
+
+    except ValueError:
+        print('Digite um número!!!')
+
+#positivo_ou_negativo(1)
