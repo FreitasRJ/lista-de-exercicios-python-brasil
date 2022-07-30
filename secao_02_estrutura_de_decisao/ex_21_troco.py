@@ -139,10 +139,10 @@ def calcular_troco(valor: int) -> str:
                 if retorno[a] != '':
                     saida += retorno[a]
                 a += 1
-            print()    
+               
             print(saida)    
-            for _ in range(4):
-                print()
+            break
         
         except ValueError:
             print('Entrada inválida!!!') 
+#calcular_troco(100)
