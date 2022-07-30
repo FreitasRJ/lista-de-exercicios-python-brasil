@@ -22,14 +22,14 @@ arredondamento.
 
 def decidir_se_eh_inteiro_ou_decimal(valor: str) -> str:
     """Escreva aqui em baixo a sua solução"""
-    try:
-
-        #valor = float(input('digite um número: '))
-        num = round(int(valor))
-        if valor == num:
-            print("'Inteiro'")
-        else:
-            print("'Decimal'") 
-    except ValueError:
-        print('Entrada inválida')
-#decidir_se_eh_inteiro_ou_decimal(256)
+    aviso = "'Inteiro'"
+    dado = valor.rsplit('.')
+    tamanho = len(dado)
+    
+    if tamanho == 2:
+        apos_ponto = int(dado[1])
+        if apos_ponto > 0:
+            aviso = "'Decimal'"
+   
+    print(aviso)
+#decidir_se_eh_inteiro_ou_decimal('11.0')
