@@ -35,3 +35,47 @@ Mostre o restultado com duas casas decimais
 
 def calcular_abastecimento(litros_de_combustivel: float, tipo_de_combustivel: str) -> str:
     """Escreva aqui em baixo a sua solução"""
+    preco_g = 2.5
+    preco_a = 1.9
+    litros_de_combustivel = 0
+    tipo_de_combustivel = ''
+
+    
+    try:
+
+        #while litros_de_combustivel <= 0:
+            #litros_de_combustivel = float(input('Quantos litros? '))
+
+        #while 'G' != tipo_de_combustivel != 'A': 
+            #tipo_de_combustivel = input('Qual o combustível? (A) - álcool ou (G) - gasolina? ').upper()
+
+        if tipo_de_combustivel == 'A':
+            tipo_combustivel = 'álcool'
+            if litros_de_combustivel <= 20:
+                desconto = 3
+            else:
+                desconto = 5
+            preco_a_com_desconto = preco_a - (preco_a * (desconto/100))
+
+            valor_pagar = litros_de_combustivel * preco_a
+            valor_pagar_desconto = litros_de_combustivel * preco_a_com_desconto
+
+        if tipo_de_combustivel == 'G':
+            tipo_combustivel = 'gasolina'
+            if litros_de_combustivel <= 20:
+                desconto = 4
+            else:
+                desconto = 6
+            preco_g_com_desconto = preco_g - (preco_g * (desconto/100))
+
+            valor_pagar = litros_de_combustivel * preco_g
+            valor_pagar_desconto = litros_de_combustivel * preco_g_com_desconto
+
+                    
+        print(f"'{litros_de_combustivel:.0f} litro(s) de {tipo_combustivel} custa(m): ", end = '') 
+        print(f"R$ {valor_pagar:.2f}. Com {desconto}% de desconto, fica R$ {valor_pagar_desconto:.2f}'")
+    
+    except ValueError:
+        print('Entrada invalida!!!')
+
+#calcular_abastecimento(10, 'A')
