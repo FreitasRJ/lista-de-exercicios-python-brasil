@@ -31,54 +31,53 @@ Mostre o restultado com duas casas decimais
 
 def fazer_operacao_e_classificar(n_1: float, n_2: float, operacao: str):
     """Escreva aqui em baixo a sua solução"""
-    while True:
-        try:
-            operacao = '?'
-            #n_1 = float(input('Entre com o primeiro número: '))
+   
+    try:
+      operacao = '?'
+      #n_1 = float(input('Entre com o primeiro número: '))    
+      #n_2 = float(input('Entre com o segundo número: '))
             
-            #n_2 = float(input('Entre com o segundo número: '))
+      while not operacao in ('+', '-', '*', '/'):
+        #operacao = input('Entre com a operacao desejada: (+, -, / ou *): ')
+          
+        if operacao == '+':
+          resul = n_1 + n_2
+        elif operacao == '-':
+          resul = n_1 - n_2
+        elif operacao == '/':
+          resul = n_1 / n_2
+        elif operacao == '*':
+          resul = n_1 * n_2
+
+        num = round(resul)
+        if resul == num:
+          dec_int = 'inteiro'
+        else:
+          dec_int = 'decimal'
+
+        if num < 0:
+          pos_neg = 'negativo'
+        if num > 0:
+          pos_neg = 'positivo'            
+        if num == 0:
+          pos_neg = 'neutro'
+          r_par_imp = 'par'
+        
+        par_imp  = resul % 2
+        if par_imp == 0:
+          r_par_imp = "par"       
+        else:
+          r_par_imp = "impar"
+
+        if dec_int == 'decimal':
+          saida = f'Número é {pos_neg} e {dec_int}'
+        else:
+          saida = f'Número é {r_par_imp}, {pos_neg} e {dec_int}'
             
-            while not operacao in ('+', '-', '*', '/'):
-                #operacao = input('Entre com a operacao desejada: (+, -, / ou *): ')
-            
-
-            if operacao == '+':
-                resul = n_1 + n_2
-            elif operacao == '-':
-                resul = n_1 - n_2
-            elif operacao == '/':
-                resul = n_1 / n_2
-            elif operacao == '*':
-                resul = n_1 * n_2
-
-            num = round(resul)
-            if resul == num:
-                dec_int = 'inteiro'
-            else:
-                dec_int = 'decimal'
-
-            if num < 0:
-                pos_neg = 'negativo'
-            if num > 0:
-                pos_neg = 'positivo'            
-            if num == 0:
-                pos_neg = 'neutro'
-                r_par_imp = 'par'
-            par_imp  = resul % 2
-
-            if par_imp == 0:
-                r_par_imp = "par"       
-            else:
-                r_par_imp = "impar"
-
-            if dec_int == 'decimal':
-                saida = f'Número é {pos_neg} e {dec_int}'
-            else:
-                saida = f'Número é {r_par_imp}, {pos_neg} e {dec_int}'
-            
-            #-------------------------------------------------------    
-            print(f'Resultado: {resul:.2f}') 
-            print(saida) 
-            break
-        except ValueError:
-            print ('Entrada inválida!!!')
+        #-------------------------------------------------------    
+        print(f'Resultado: {resul:.2f}') 
+        print(saida) 
+        break
+    except ValueError:
+        print ('Entrada inválida!!!')
+#fazer_operacao_e_classificar(1,2,"+")
