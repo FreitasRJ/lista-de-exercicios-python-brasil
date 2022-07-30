@@ -21,7 +21,7 @@ def maior_de_dois_numeros(x, y):
     y = int(input('Entre com o segundo  número: '))
     
     maior = (x, y)[x < y]
-    print(maior)
+    return print(maior)
 
 #maior_de_dois_numeros(2,3)
 
