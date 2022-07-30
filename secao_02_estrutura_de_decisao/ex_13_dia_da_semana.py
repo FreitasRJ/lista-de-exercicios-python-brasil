@@ -27,5 +27,24 @@ se digitar outro valor deve aparecer valor inválido.
 """
 
 
-def calcular_dia_da_semana(numero: int):
+def calcular_dia_da_semana(dia: int):
     """Escreva aqui em baixo a sua solução"""
+    if  dia < 1 or dia >7:
+        resposta = "'Dia Inválido'"
+
+    elif dia == 1:
+        resposta = "'Domingo'"
+    elif dia == 2:
+        resposta = "'Segunda'"
+    elif dia == 3:
+        resposta = "'Terça'"
+    elif dia == 4:
+        resposta = "'Quarta'"
+    elif dia == 5:
+        resposta = "'Quinta'"
+    elif dia == 6:
+        resposta = "'Sexta'"
+    elif dia == 7:
+        resposta = "'Sábado'"
+    
+    return print(resposta)
