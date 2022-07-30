@@ -20,3 +20,12 @@ bissexto.
 
 def eh_ano_bissexto(ano: int):
     """Escreva aqui em baixo a sua solução"""
+    quatro = ano % 4
+    cem = ano % 100
+    quatrocentos = ano % 400
+                
+    mensagem = calendar.isleap(ano)
+                    
+    return print(mensagem)
+    
+import calendar
