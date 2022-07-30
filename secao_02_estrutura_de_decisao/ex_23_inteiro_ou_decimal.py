@@ -32,3 +32,4 @@ def decidir_se_eh_inteiro_ou_decimal(valor: str) -> str:
             print("'Decimal'") 
     except ValueError:
         print('Entrada inválida')
+#decidir_se_eh_inteiro_ou_decimal(256)
