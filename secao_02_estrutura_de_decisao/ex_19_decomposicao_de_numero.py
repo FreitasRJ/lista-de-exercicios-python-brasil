@@ -58,9 +58,9 @@ def decompor_numero(numero: int):
             #numero = int(input('Digite um número positivo menor que 1000: '))
             
             if numero >= 1000:
-                print('O número precisa ser menor que 1000')
+                print("'O número precisa ser menor que 1000'")
             elif numero < 0:
-                print('O número precisa ser positivo')
+                print("'O número precisa ser positivo'")
             else:
                 
                 cent_int = dez_int = und_int = 0
