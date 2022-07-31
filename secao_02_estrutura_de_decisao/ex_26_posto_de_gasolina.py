@@ -37,8 +37,8 @@ def calcular_abastecimento(litros_de_combustivel: float, tipo_de_combustivel: st
     """Escreva aqui em baixo a sua solução"""
     preco_g = 2.5
     preco_a = 1.9
-    litros_de_combustivel = 0
-    tipo_de_combustivel = ''
+    #litros_de_combustivel = 0
+    #tipo_de_combustivel = ''
 
     
     try:
