@@ -36,15 +36,27 @@ def investigar(telefonou: str, estava_no_local: str, mora_perto: str, devia: str
     perguntas = [ "Telefonou para a vítima? ", "Esteve no local do crime? ",
     "Mora perto da vítima? ", "Devia para a vítima? ", "Já trabalhou com a vítima? "]
     respostas_positivas = 0
-
+    """
     for a in range(5):
         resposta = ''
         while resposta != 'sim' and resposta != 'não':
             print(perguntas[a], end='')
-            resposta = input().lower()
+            resposta = input().lower()           
+
             if resposta == 'sim':
                 respostas_positivas +=1
-
+    """
+    if telefonou == "'Sim'":
+        respostas_positivas +=1
+    if estava_no_local == "'Sim'":
+        respostas_positivas +=1
+    if mora_perto == "'Sim'":
+        respostas_positivas +=1
+    if devia == "'Sim'":
+        respostas_positivas +=1
+    if trabalhou == "'Sim'":
+        respostas_positivas +=1
+        
 
     if respostas_positivas == 5:
         classificacao = "'Assassino'"
