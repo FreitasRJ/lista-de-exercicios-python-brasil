@@ -16,3 +16,15 @@ Mostre a média com duas casas decimais.
 
 def calcular_soma_e_media(n1: int, n2: int, n3: int, n4: int, n5: int) -> str:
     """Escreva aqui em baixo a sua solução"""
+    numero = [n1, n2, n3, n4, n5]
+    quant = len(numero)
+    try:
+        soma = 0
+        for num in range (5):
+            #numero = float(input(f'Digite o número ({num}): '))
+            soma += numero[num]
+        media = soma / quant
+        print(f"'Soma: {soma}, Média: {media:.2f}'")
+    except ValueError:
+        print("Entrada inválida!!!")
+#calcular_soma_e_media(1, 2, 3, 4, 5)
