@@ -48,4 +48,4 @@ def obter_numero_valido():
     print(nota)
 
 
-obter_numero_valido()
+#obter_numero_valido()
