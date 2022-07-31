@@ -54,7 +54,7 @@ def decompor_numero(numero: int):
     """Escreva aqui em baixo a sua solução"""
     try:
             
-        numero = int(input('Digite um número positivo menor que 1000: '))
+        #numero = int(input('Digite um número positivo menor que 1000: '))
             
         if numero >= 1000:
             print("'O número precisa ser menor que 1000'")
@@ -113,4 +113,4 @@ def decompor_numero(numero: int):
     except ValueError:
         print('Entrada inválida')
 
-decompor_numero(7)
+#decompor_numero(7)
