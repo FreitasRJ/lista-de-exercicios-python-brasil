@@ -54,12 +54,14 @@ def decompor_numero(numero: int):
     """Escreva aqui em baixo a sua solução"""
     try:
             
-        #numero = int(input('Digite um número positivo menor que 1000: '))
+        numero = int(input('Digite um número positivo menor que 1000: '))
             
         if numero >= 1000:
-            print("'O número precisa ser menor que 1000'")
+            mensagem = "'O número precisa ser menor que 1000'"
+            
         elif numero < 0:
-            print("'O número precisa ser positivo'")
+            mensagem = "'O número precisa ser positivo'"
+            
         else:
                 
             cent_int = dez_int = und_int = 0
@@ -107,10 +109,11 @@ def decompor_numero(numero: int):
             # 001                 
             elif cent_int == 0 and dez_int == 0 and und_int != 0:
                  mensagem = str(und_int) + und_str    
-            
-        print(f"'{numero} = {mensagem}'")
-                
+        if numero > 0 and numero < 1000:
+            print(f"'{numero} = {mensagem}'")
+        else:    
+            print(f"{mensagem}")
     except ValueError:
         print('Entrada inválida')
 
-#decompor_numero(7)
+decompor_numero(7)
