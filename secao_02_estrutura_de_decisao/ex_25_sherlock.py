@@ -36,6 +36,7 @@ def investigar(telefonou: str, estava_no_local: str, mora_perto: str, devia: str
     perguntas = [ "Telefonou para a vítima? ", "Esteve no local do crime? ",
     "Mora perto da vítima? ", "Devia para a vítima? ", "Já trabalhou com a vítima? "]
     respostas_positivas = 0
+    
     """
     for a in range(5):
         resposta = ''
@@ -46,17 +47,17 @@ def investigar(telefonou: str, estava_no_local: str, mora_perto: str, devia: str
             if resposta == 'sim':
                 respostas_positivas +=1
     """
-    if telefonou == "'Sim'":
+    if telefonou == "Sim":
         respostas_positivas +=1
-    if estava_no_local == "'Sim'":
+    if estava_no_local == "Sim":
         respostas_positivas +=1
-    if mora_perto == "'Sim'":
+    if mora_perto == "Sim":
         respostas_positivas +=1
-    if devia == "'Sim'":
+    if devia == "Sim":
         respostas_positivas +=1
-    if trabalhou == "'Sim'":
+    if trabalhou == "Sim":
         respostas_positivas +=1
-        
+            
 
     if respostas_positivas == 5:
         classificacao = "'Assassino'"
@@ -71,3 +72,4 @@ def investigar(telefonou: str, estava_no_local: str, mora_perto: str, devia: str
         classificacao = "'Inocente'"
 
     print (classificacao)
+#investigar('Sim','Sim','Sim','Sim','Sim')
