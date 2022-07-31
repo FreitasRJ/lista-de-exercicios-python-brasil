@@ -36,7 +36,7 @@ def obter_numero_valido():
     """Escreva aqui em baixo a sua solução"""
     valido = 'não'
     while valido == 'não':
-        #nota = input('Entre com um número entre 0 e 10: ')
+        nota = input('Entre com um número entre 0 e 10: ')
         if not nota.isnumeric():
             print(f'Número inválido: {nota}')
         else: 
@@ -48,4 +48,4 @@ def obter_numero_valido():
     print(nota)
 
 
-#obter_numero_valido()
+obter_numero_valido()
