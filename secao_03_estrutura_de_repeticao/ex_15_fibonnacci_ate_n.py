@@ -25,3 +25,27 @@ n−ésimo termo.
 
 def calcular_serie_de_fibonacci(n: int) -> str:
     """Escreva aqui em baixo a sua solução"""
+
+    primeiro = 0
+    segundo = 1
+    conta = 0
+    fibona = ''
+    
+    try:
+        #n = int(input('Fibonacci. Entre o número de temos: '))
+    
+        while conta <= (n-2):
+            terceiro = primeiro + segundo
+            fibona += f", {terceiro}"
+            primeiro = segundo
+            segundo = terceiro      
+            conta += 1
+
+        print(f"'1{fibona}'")
+
+    except ValueError:
+        print('Entrada inválida!!!')
+
+#calcular_serie_de_fibonacci(7)
+
+  
