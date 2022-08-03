@@ -46,10 +46,14 @@ def eh_primo(n: int) -> bool:
         resposta = (False, True)[n == 2]
 
         if n > 2:
-            if n % 2 == 0:
-                resposta = False
-            else:
-                resposta = True
+            resposta = True
+            result = cont = 1
+            while result !=0 and cont < n:
+                result = n % cont
+                if result == 0:
+                    resposta = False
+                cont +=1
+
         print(resposta)
               
     except ValueError:
