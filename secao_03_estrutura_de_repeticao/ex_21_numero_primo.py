@@ -42,9 +42,10 @@ def eh_primo(n: int) -> bool:
     resposta = ""
     try:
         #n = int(input("Digite um número inteiro: "))
-        resposta = (False, True)[n < 2]
-        resposta = (False, True)[n == 2]
-
+        if n < 2:
+            resposta = False
+        if n == 2:
+            resposta = True
         if n > 2:
             resposta = True
             result = cont = 1
