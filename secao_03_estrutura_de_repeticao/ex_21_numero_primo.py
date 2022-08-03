@@ -49,11 +49,15 @@ def eh_primo(n: int) -> bool:
         if n > 2:
             resposta = True
             result = cont = 1
-            while result !=0 and cont < n:
+            while result !=0 and cont < n-1:
+                cont +=1
+                
                 result = n % cont
                 if result == 0:
                     resposta = False
-                cont +=1
+                else:
+                    resposta = True
+                #print(f'resposta: {resposta},result: {result}, cont: {cont}')
 
         print(resposta)
               
