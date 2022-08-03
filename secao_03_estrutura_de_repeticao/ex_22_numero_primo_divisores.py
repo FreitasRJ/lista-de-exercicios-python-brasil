@@ -2,7 +2,8 @@
 Exercício 22 da seção de estrutura sequencial da Python Brasil:
 https://wiki.python.org.br/EstruturaDeRepeticao
 
-Altere o programa de cálculo dos números primos, informando, caso o número não seja primo, por quais número ele é
+Altere o programa de cálculo dos números primos, informando, caso o 
+número não seja primo, por quais número ele é
 divisível.
     >>> eh_primo(0)
     False
@@ -50,3 +51,29 @@ divisível.
 
 def eh_primo(n: int) -> bool:
     """Escreva aqui em baixo a sua solução"""
+
+    if n < 2:
+        resposta = False
+    if n == 2:
+        resposta = True
+    if n > 2:
+        resposta = True
+        result = cont = 1
+
+        while result !=0 and cont < n-1:
+            cont +=1   
+            result = n % cont
+            
+            if result != 0:
+                resposta = True
+            else:
+                resposta = False
+
+    if resposta == False:
+        for idx in range(2,n):
+            if n % idx == 0:
+                print(f'É divisível por {idx}')
+
+    print(resposta)
+
+#eh_primo(44)
