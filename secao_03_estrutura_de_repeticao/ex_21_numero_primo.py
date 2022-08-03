@@ -39,3 +39,13 @@ divisível somente por ele mesmo e por 1.
 
 def eh_primo(n: int) -> bool:
     """Escreva aqui em baixo a sua solução"""
+    try:
+        n = int(input("Digite um número inteiro: "))
+        resposta = True
+        if n != 2 and n % 2 == 0:
+            resposta = False
+        print(resposta)
+        
+    except ValueError:
+        print('Entrada inválida!!!')
+eh_primo(1)
