@@ -2,7 +2,8 @@
 Exercício 26 da seção de estrutura sequencial da Python Brasil:
 https://wiki.python.org.br/EstruturaDeRepeticao
 
-uma eleição existem três candidatos. Faça um programa que peça o número total de eleitores. Peça para cada eleitor votar
+uma eleição existem três candidatos. Faça um programa que peça o número total
+ de eleitores. Peça para cada eleitor votar
  e ao final mostrar o número de votos de cada candidato.
 
     >>> calcular_votos()
@@ -36,3 +37,26 @@ uma eleição existem três candidatos. Faça um programa que peça o número to
 
 def calcular_votos(*votos):
     """Escreva aqui em baixo a sua solução"""
+
+    corrupto_votos = 0
+    mentiroso_votos = 0
+    rouba_votos = 0
+    votantes = len(votos)
+    
+    for voto in votos:
+        if voto == 'corrupto':
+            corrupto_votos += 1
+
+        elif voto == 'mentiroso':
+            mentiroso_votos += 1
+        
+        elif voto == 'rouba, mas faz':
+            rouba_votos += 1
+    mensagem = f'Votantes: {votantes}\n'
+    mensagem += f'Votos no candidato corrupto: {corrupto_votos}\n'
+    mensagem += f'Votos no candidato mentiroso: {mentiroso_votos}\n'
+    mensagem += f'Votos no candidato rouba, mas faz: {rouba_votos}'
+
+    return print(mensagem)
+
+#calcular_votos('corrupto', 'mentiroso')   
