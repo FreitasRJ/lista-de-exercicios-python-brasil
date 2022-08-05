@@ -42,7 +42,13 @@ executados.
 
 """
 
-def calcular_primos_e_divisoes(n: int) -> tuple[str, int]:
+
+
+
+from typing import Tuple
+
+
+def calcular_primos_e_divisoes(n: int) -> Tuple[str, int]:
     """Escreva aqui em baixo a sua solução"""
     """
     Crivo de Erastóstenes: (elimina os números compostos)
@@ -76,6 +82,6 @@ def calcular_primos_e_divisoes(n: int) -> tuple[str, int]:
     saida = ', '.join(saida)
     saida = f'{saida}'
     
-    return [saida, divisoes]
+    return ', '.join(map(str,primos)), divisoes
 
-#print(calcular_primos_e_divisoes(10))
+#print(calcular_primos_e_divisoes(25))
