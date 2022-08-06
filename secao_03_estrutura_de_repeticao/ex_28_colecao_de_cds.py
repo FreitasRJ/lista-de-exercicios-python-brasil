@@ -2,8 +2,9 @@
 Exercício 28 da seção de estrutura sequencial da Python Brasil:
 https://wiki.python.org.br/EstruturaDeRepeticao
 
-Faça um programa que calcule o valor total investido por um colecionador em sua coleção de CDs e o valor médio gasto em
-cada um deles. O usuário deverá informar a quantidade de CDs e o valor para em cada um.
+Faça um programa que calcule o valor total investido por um colecionador em sua coleção de CDs
+ e o valor médio gasto em cada um deles. O usuário deverá informar a quantidade de CDs e o 
+ valor para em cada um.
 
 Mostre os valores monetórios com duas casas decimais..
 
@@ -35,6 +36,25 @@ Mostre os valores monetórios com duas casas decimais..
 
 """
 
-
+import statistics
 def calcular_estatisticas_colecao_de_cd():
     """Escreva aqui em baixo a sua solução"""
+    try:
+        quant_cds = int(input("Qual a quantidade de itens? "))
+        cont = 0
+        valor = []
+        while cont < quant_cds:
+            cont += 1
+            preco = float(input(f'Informe o valor em R$ do item {cont} '))
+            valor.append(preco)
+        valor_colecao = sum(valor)
+        media = statistics.mean(valor)
+
+        print(f'Número de cds: {quant_cds}')
+        print(f'Valor total da coleção: R$ {valor_colecao:.2f}')
+        print(f'Custo médio dos cds: R$ {media:.2f}')
+        
+
+    except ValueError:
+        print("Entrada inválida!!!")
+#calcular_estatisticas_colecao_de_cd()
