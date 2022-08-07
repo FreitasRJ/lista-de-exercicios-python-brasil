@@ -56,3 +56,35 @@ para registrar a próxima compra.
 
 def rodar_programa_de_caixa():
     """Escreva aqui em baixo a sua solução"""
+    def notinha(total, dinheiro):
+        troco = dinheiro - total
+        print('Lojas Tabajara')
+        print(f'Total     : R$  {total:>5.2f}')                
+        print(f'Dinheiro  : R$  {dinheiro:>5.2f}')
+        print(f'Troco     : R$  {troco:>5.2f}')
+        print('-------------------')
+   
+    try:
+        valor = total = 0
+        while valor != -1:
+            valor = float(input('valor do item: '))
+            if not valor in (0, -1):
+                total += valor
+            if valor == 0:
+                dinheiro = float(input(f'Total R$ {total:.2f} Dinheiro  : R$ '))
+                notinha(total, dinheiro)
+                total = 0
+            if valor == -1:
+                if total == 0:
+                    print('Lojas Tabajara')
+                    print('-------------------')
+                    
+                else:
+                    dinheiro = float(input(f'Total R$ {total:.2f} Dinheiro  : R$ '))
+                    notinha(total, dinheiro)
+                print('Programa encerrado!')
+                break
+    except ValueError:
+        print('Entrada inválida!!!')
+
+#rodar_programa_de_caixa()
