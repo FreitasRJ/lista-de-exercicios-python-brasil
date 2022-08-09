@@ -52,7 +52,55 @@ da média das alturas e dos pesos dos clientes
     Media de peso dos clientes: 90.2 kilos
 
 """
-
-
+import statistics
 def rodar_senso():
-    """Escreva aqui em baixo a sua solução"""
+    """Escreva aqui em baixo a sua solução"""   
+    dados = []
+    nomes = []
+    alturas = []
+    pesos = []
+    
+    try:
+        while True:
+            
+            nome = input('Digite o nome: ')
+            if nome != '0':
+                nomes.append(nome)
+                altura = int(input('Digite a altura em centimetro: '))
+                alturas.append(altura)
+                peso = int(input('Digite o peso em kg: '))
+                pesos.append(peso)
+                #dados.append((nome, altura, peso))
+                #print(dados)
+            else:
+                mais_alto = max(alturas)
+                mais_baixo = min(alturas)
+                mais_gordo = max(pesos)
+                mais_magro = min(pesos)
+                for idx in range(len(nomes)):
+                    if alturas[idx] == mais_alto:
+                        nome_mais_alto = nomes[idx]
+                    if alturas[idx] == mais_baixo:
+                        nome_mais_baixo = nomes[idx] 
+                    if pesos[idx] == mais_magro:
+                        nome_mais_magro = nomes[idx]    
+                    if pesos[idx] == mais_gordo:
+                        nome_mais_gordo = nomes[idx]
+                media_alturas = statistics.mean(alturas)
+                media_pesos = statistics.mean(pesos)
+                
+                print(f'Cliente mais alto: {nome_mais_alto}, com {mais_alto} centímetros')
+                print(f'Cliente mais baixo: {nome_mais_baixo}, com {mais_baixo} centímetros')
+                print(f'Cliente mais magro: {nome_mais_magro}, com {mais_magro} kilos')
+                print(f'Cliente mais gordo: {nome_mais_gordo}, com {mais_gordo} kilos')
+                print('--------------------------------------------------')
+                print(f'Media de altura dos clientes: {media_alturas:.1f} centímetros')
+                print(f'Media de peso dos clientes: {media_pesos:.1f} kilos')
+                break
+    except ValueError:
+        print('Entrada inválida!!!')
+#rodar_senso()
+
+
+
+
