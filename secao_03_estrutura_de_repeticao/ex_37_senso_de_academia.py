@@ -55,7 +55,6 @@ da média das alturas e dos pesos dos clientes
 import statistics
 def rodar_senso():
     """Escreva aqui em baixo a sua solução"""   
-    dados = []
     nomes = []
     alturas = []
     pesos = []
@@ -70,8 +69,7 @@ def rodar_senso():
                 alturas.append(altura)
                 peso = int(input('Digite o peso em kg: '))
                 pesos.append(peso)
-                #dados.append((nome, altura, peso))
-                #print(dados)
+
             else:
                 mais_alto = max(alturas)
                 mais_baixo = min(alturas)
@@ -100,7 +98,7 @@ def rodar_senso():
     except ValueError:
         print('Entrada inválida!!!')
 #rodar_senso()
-
+# Outra solução seria utilizar operator.itemgetter(n).
 
 
 
