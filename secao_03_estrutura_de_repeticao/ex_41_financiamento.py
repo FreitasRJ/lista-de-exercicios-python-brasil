@@ -30,5 +30,22 @@ Quantidade de Parcelas  % de Juros sobre o valor inicial da dívida
 """
 
 
+
+
+
+from os import PRIO_PGRP
+
+
 def gerar_dados_de_financiamente(valor_inicial: float):
     """Escreva aqui em baixo a sua solução"""
+    print('Valor da Dívida Valor dos Juros Quantidade de Parcelas  Valor da Parcela')
+    perc = {1:0, 3:10, 6:15, 9:20, 12:25}
+    for parcelas in perc:
+       
+        porc = (perc[parcelas]/100)
+        valor = valor_inicial * (1 + porc)
+        valor_parcela = valor/parcelas 
+        
+        print(f'R$ {valor:<12.2f} {porc:<15.0%} {parcelas:<16}        R$ {valor_parcela:>9.2f}')
+
+#gerar_dados_de_financiamente(1000)
