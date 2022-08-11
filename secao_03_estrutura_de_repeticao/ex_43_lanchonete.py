@@ -21,7 +21,7 @@ comprados.
     _____________________________________________________________________________
     |                              RESUMO DA CONTA                              |
     |---------------------------------------------------------------------------|
-    | Epecificação     | Código | Preço Unitário (R$) | Quantidade | Total (R$) |
+    | Especificação    | Código | Preço Unitário (R$) | Quantidade | Total (R$) |
     |---------------------------------------------------------------------------|
     | Total Geral:                                    |          0 |       0.00 |
     -----------------------------------------------------------------------------
@@ -29,7 +29,7 @@ comprados.
     _____________________________________________________________________________
     |                              RESUMO DA CONTA                              |
     |---------------------------------------------------------------------------|
-    | Epecificação     | Código | Preço Unitário (R$) | Quantidade | Total (R$) |
+    | Especificação    | Código | Preço Unitário (R$) | Quantidade | Total (R$) |
     | Cachorro Quente  | 100    | 1.20                |          1 |       1.20 |
     |---------------------------------------------------------------------------|
     | Total Geral:                                    |          1 |       1.20 |
@@ -38,7 +38,7 @@ comprados.
     _____________________________________________________________________________
     |                              RESUMO DA CONTA                              |
     |---------------------------------------------------------------------------|
-    | Epecificação     | Código | Preço Unitário (R$) | Quantidade | Total (R$) |
+    | Especificação    | Código | Preço Unitário (R$) | Quantidade | Total (R$) |
     | Cachorro Quente  | 100    | 1.20                |          3 |       3.60 |
     |---------------------------------------------------------------------------|
     | Total Geral:                                    |          3 |       3.60 |
@@ -47,7 +47,7 @@ comprados.
     _____________________________________________________________________________
     |                              RESUMO DA CONTA                              |
     |---------------------------------------------------------------------------|
-    | Epecificação     | Código | Preço Unitário (R$) | Quantidade | Total (R$) |
+    | Especificação    | Código | Preço Unitário (R$) | Quantidade | Total (R$) |
     | Cachorro Quente  | 100    | 1.20                |          3 |       3.60 |
     | Bauru Simples    | 101    | 1.30                |          2 |       2.60 |
     |---------------------------------------------------------------------------|
@@ -57,7 +57,7 @@ comprados.
     _____________________________________________________________________________
     |                              RESUMO DA CONTA                              |
     |---------------------------------------------------------------------------|
-    | Epecificação     | Código | Preço Unitário (R$) | Quantidade | Total (R$) |
+    | Especificação    | Código | Preço Unitário (R$) | Quantidade | Total (R$) |
     | Cachorro Quente  | 100    | 1.20                |          3 |       3.60 |
     | Bauru Simples    | 101    | 1.30                |          2 |       2.60 |
     | Bauru com Ovo    | 102    | 1.50                |          3 |       4.50 |
@@ -68,7 +68,7 @@ comprados.
     _____________________________________________________________________________
     |                              RESUMO DA CONTA                              |
     |---------------------------------------------------------------------------|
-    | Epecificação     | Código | Preço Unitário (R$) | Quantidade | Total (R$) |
+    | Especificação    | Código | Preço Unitário (R$) | Quantidade | Total (R$) |
     | Cachorro Quente  | 100    | 1.20                |          3 |       3.60 |
     | Bauru Simples    | 101    | 1.30                |          2 |       2.60 |
     | Bauru com Ovo    | 102    | 1.50                |          3 |       4.50 |
@@ -81,7 +81,7 @@ comprados.
     _____________________________________________________________________________
     |                              RESUMO DA CONTA                              |
     |---------------------------------------------------------------------------|
-    | Epecificação     | Código | Preço Unitário (R$) | Quantidade | Total (R$) |
+    | Especificação    | Código | Preço Unitário (R$) | Quantidade | Total (R$) |
     | Cachorro Quente  | 100    | 1.20                |          3 |       3.60 |
     | Bauru Simples    | 101    | 1.30                |          2 |       2.60 |
     | Bauru com Ovo    | 102    | 1.50                |          3 |       4.50 |
@@ -94,7 +94,7 @@ comprados.
     _____________________________________________________________________________
     |                              RESUMO DA CONTA                              |
     |---------------------------------------------------------------------------|
-    | Epecificação     | Código | Preço Unitário (R$) | Quantidade | Total (R$) |
+    | Especificação    | Código | Preço Unitário (R$) | Quantidade | Total (R$) |
     | Cachorro Quente  | 100    | 1.20                |          3 |       3.60 |
     | Bauru Simples    | 101    | 1.30                |          2 |       2.60 |
     | Bauru com Ovo    | 102    | 1.50                |          3 |       4.50 |
@@ -106,6 +106,44 @@ comprados.
 
 """
 
-
 def fechar_conta(*itens):
     """Escreva aqui em baixo a sua solução"""
+    ped_und = {}
+    preco = 0
+    valor_total = 0
+    total_itens = 0
+    for codigo, quant in itens:
+        ped_und[codigo] = ped_und.get(codigo,0) + quant 
+
+    print('_____________________________________________________________________________')
+    print('|                              RESUMO DA CONTA                              |')
+    print('|---------------------------------------------------------------------------|')
+    print('| Especificação    | Código | Preço Unitário (R$) | Quantidade | Total (R$) |')
+
+
+
+    menu = {'100': ('Cachorro Quente', 1.20),
+            '101': ('Bauru Simples', 1.30),
+            '102': ('Bauru com Ovo', 1.50),
+            '103': ('Hamburger', 1.20),
+            '104': ('Cheeseburger', 1.30),
+            '105': ('Refrigerante', 1.00),}
+
+    preco = {chave:preco for (chave, (_, preco)) in menu.items()}
+    descricao = {chave:descricao for (chave, (descricao, _)) in menu.items()}
+    #print(pedidos[0][1], 'pedidos')
+    #print(preco, "preco")
+    #print(descricao, "descrição")
+
+    for idx in ped_und:
+        #print(idx)
+        valor_item = preco[idx] * ped_und[idx]
+        valor_total += valor_item
+        total_itens += ped_und[idx]
+        #print(f'| {descricao[idx]}     | {idx} | {preco[idx]} (R$) | Quantidade | Total (R$) |')     
+        print(f'| {descricao[idx]:16s} | {idx}    | {preco[idx]:<19.2f} | {ped_und[idx]:10d} | {valor_item:10.2f} |')
+    print('|---------------------------------------------------------------------------|')
+    print(f'| Total Geral:                                    | {total_itens:10d} | {valor_total:10.2f} |')
+    print('-----------------------------------------------------------------------------')
+
+#fechar_conta(('100', 1), ('100', 2), ('101', 2), ('102', 3), ('103', 4), ('104', 5))
