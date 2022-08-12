@@ -90,3 +90,41 @@ from collections import Counter
 
 def apurar_votos(*votos):
     """Escreva aqui em baixo a sua solução"""
+    dist = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0}    
+    total_votos = 0
+    for idx in votos:
+        voto = int(idx)
+        antigo = dist[voto]
+        dist[voto] = antigo + 1
+        
+    for voto in votos:
+        total_votos += 1    
+    indice = 100/total_votos
+    
+    
+    
+    print('Código do Candidato Nome do Candidato Votos Porcentagem sobre total')
+
+    print(f'1                   Bostonaro         {dist[1]:<5d}{dist[1] * indice:6.1f}%')
+    print(f'2                   Luladrão          {dist[2]:<5d}{dist[2] * indice:6.1f}%')
+    print(f'3                   Dilmanta          {dist[3]:<5d}{dist[3] * indice:6.1f}%')
+    print(f'4                   FHC Isentão       {dist[4]:<5d}{dist[4] * indice:6.1f}%')
+    print('-------------------------------------------------------------------')
+    print(f'5                   Votos Nulos       {dist[5]:<5d}{dist[5] * indice:6.1f}%')
+    print(f'6                   Votos Brancos     {dist[6]:<5d}{dist[6] * indice:6.1f}%')
+
+#apurar_votos('1', '2')
+
+'''    
+    bolso = votos.count('1')
+    lula = votos.count('2')
+    Dilm = votos.count('3')
+    FHC = votos.count('4')
+    VN = votos.count('5')
+    VB = votos.count('6')
+    conj_votos = bolso, lula, Dilm, FHC, VN, VB
+    total_votos = sum(voto for voto in conj_votos)
+    indice = 100/total_votos
+    p_bol = indice * bolso
+'''
+
