@@ -17,4 +17,7 @@ Faça um Programa que leia um vetor de 10 números reais e mostre-os na ordem in
 
 def inverter_vetores(inteiros: list) -> str:
     """Escreva aqui em baixo a sua solução"""
+    inteiros.reverse()
+    return print(inteiros)
     
+#inverter_vetores([0,1,2,3,4,5,6,7,8,9])
