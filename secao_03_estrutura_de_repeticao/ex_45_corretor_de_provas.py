@@ -49,3 +49,35 @@ Gabarito da Prova:
 
 def corrigir(*provas):
     """Escreva aqui em baixo a sua solução"""
+    def compara(prova):
+        conta = 0
+        nota = 0
+        aluno = prova[0]
+        gabarito = 'A','B','C','D','E','E','D','C','B','A'
+        for i in gabarito:
+            conta += 1
+            if prova[conta] == i:
+                nota += 1
+        return aluno, nota
+    
+    print('Aluno                 Nota')
+    total_notas = 0
+    num_alunos = len(provas)
+    lista_notas = []
+    for prova in (provas):
+        notas = compara(prova)
+        lista_notas.append(notas[1])
+        print(f'{notas[0]}                 {notas[1]}')
+        total_notas += notas[1]
+
+    media_geral = total_notas/num_alunos
+    maior_nota = max(lista_notas)
+    menor_nota = min(lista_notas)
+    print('---------------------------')
+    print(f'Média geral: {media_geral}')
+    print(f'Maior nota: {maior_nota}')
+    print(f'Menor nota: {menor_nota}')
+    print(f'Total de Alunos: {num_alunos}')
+        
+ 
+#corrigir( ('Renzo','A','B','C','D','E','E','D','C','B','A' ),('Fulano','A','B','C','D','E','E','D','C','B','B' ),)
