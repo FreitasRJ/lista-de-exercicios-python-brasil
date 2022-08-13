@@ -44,7 +44,28 @@ Mostre os valores com uma casa decimal sem arredondar.
     João do Pulo: 6.2 m
 
 """
-
-
+import statistics
 def calcular_estatiscas_do_salto(nome, *saltos):
     """Escreva aqui em baixo a sua solução"""
+   
+    ordem = 'Primeiro', 'Segundo', 'Terceiro','Quarto', 'Quinto'
+    soma = []
+    
+    print(f'Atleta: {nome}')
+    print(f'---------------------------------')
+
+    for idx in range(5):
+        print(f'{ordem[idx]} Salto: {saltos[idx]} m')
+        if saltos[idx] != max(saltos) and saltos[idx] != min(saltos):
+            soma.append(saltos[idx])
+    media_saltos_validos = statistics.mean(sorted(saltos)[1:-2]) 
+    #print(soma, "soma")
+    
+    print('---------------------------------')
+    print(f'Melhor salto:  {max(saltos)} m')
+    print(f'Pior salto: {min(saltos)} m')
+    print(f'Média dos demais saltos: {media_saltos_validos:.1f} m')
+    print('---------------------------------')
+    print(f'Resultado final:')
+    print(f'{nome}: {media_saltos_validos:.1f} m')
+#calcular_estatiscas_do_salto('Rodrigo Curvêllo', 6.5, 6.1, 6.2, 5.4, 5.3)
