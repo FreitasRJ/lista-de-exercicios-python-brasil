@@ -19,5 +19,16 @@ Exemplo:
 """
 
 
+
+
+
+
+
 def inverter_inteiro(numero):
     """Escreva aqui em baixo a sua solução"""
+    num = str(numero)
+    tam = len(num)
+    for i in range(tam,0,-1):
+       print(num[i - 1 ], end='')
+    
+#inverter_inteiro(123456789)
