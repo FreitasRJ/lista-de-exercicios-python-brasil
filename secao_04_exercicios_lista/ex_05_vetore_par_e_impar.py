@@ -21,7 +21,7 @@ def separar_em_vertores_par_e_impar(inteiros: list) -> str:
     """Escreva aqui em baixo a sua solução"""
     par = ""
     impar = ""
-    par = [par for par in inteiros if par // 2 == 0]
-    impar = [impar for impar in inteiros if impar // 2 != 0]
+    par = [par for par in inteiros if par % 2 == 0]
+    impar = [impar for impar in inteiros if impar % 2 != 0]
     print(f"'Vetor original: {inteiros}. Vetor com elementos pares: [{par}]. Vetor com elementos impares: [{impar}].'")
 #separar_em_vertores_par_e_impar(list(range(10)))
