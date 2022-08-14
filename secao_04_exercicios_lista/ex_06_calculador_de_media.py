@@ -13,7 +13,42 @@ imprima o número de alunos com média maior ou igual a 7.0, e imprima separado 
     Alunos com media < 7.0: 5
 """
 
-
+import statistics
 def calcular_media(*notas) -> int:
     """Escreva aqui em baixo a sua solução"""
+    media_maior = 0
+    for alunos in notas:
+        soma = 0
+        for nota in alunos:
+            soma += nota
+        media = soma / 4
+        if media >= 7:
+            media_maior += 1
 
+    print(f'Alunos com media >= 7.0: {media_maior}')
+    print(f'Alunos com media < 7.0: {10 - media_maior}')
+
+        
+
+'''    
+    notas = []
+    media_maior = 0
+    for alunos in range(10):
+        print(f'Entre com as notas do {alunos+1}° aluno: ')
+        notas_por_aluno = []
+        nota = 0
+        soma = 0
+        for idx in range(4):
+            nota = int(input(f'Digite a {idx + 1}ª nota do aluno {alunos+1}: '))
+            notas_por_aluno.append(nota)
+            soma += nota
+        notas.append(notas_por_aluno)
+        print(notas)
+        media = soma / 4
+        if media >= 7:
+            media_maior += 1
+
+    print(f'Alunos com media >= 7.0: {media_maior}')
+    print(f'Alunos com media < 7.0: {10 - media_maior}')
+'''
+#calcular_media([8,9,10,2],[2,10,9,5],[5,2,9,10],[10,1,1,10],[9,2,9,8],[8,8,9,7],[7,7,7,9],[4,6,5,7],[1,2,8,10],[10,2,2,8])
