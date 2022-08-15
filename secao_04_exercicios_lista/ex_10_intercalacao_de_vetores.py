@@ -2,7 +2,8 @@
 Exercício 10 da seção de listas da Python Brasil:
 https://wiki.python.org.br/ExerciciosListas
 
-Faça um Programa receba dois vetores com mesmo tamanho. Gere um terceiro vetor com o dobro elementos, cujos valores
+Faça um Programa receba dois vetores com mesmo tamanho. Gere um terceiro vetor com o dobro
+ elementos, cujos valores
 deverão ser compostos pelos elementos intercalados dos dois outros vetores.
 
     >>> intercalar([], [])
@@ -19,4 +20,11 @@ deverão ser compostos pelos elementos intercalados dos dois outros vetores.
 
 def intercalar(lista_1: list, lista_2: list) -> list:
     """Escreva aqui em baixo a sua solução"""
+    nova = []
+    for i in range(len(lista_1)):
+        nova.append(lista_1[i])
+        nova.append(lista_2[i]) 
+    return print(nova)
 
+
+#intercalar(list(range(10)), list(range(10, 20)))
