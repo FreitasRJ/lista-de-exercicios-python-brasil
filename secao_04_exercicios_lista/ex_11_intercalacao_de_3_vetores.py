@@ -20,7 +20,7 @@ def intercalar(lista_1: list, lista_2: list, lista_3: list) -> list:
     """Escreva aqui em baixo a sua solução"""
     def junta():
         for a in zip(lista_1, lista_2, lista_3):
-            yield from a
+            yield a
         
     return list(junta())
 
