@@ -3,8 +3,9 @@ Exercício 13 da seção de listas da Python Brasil:
 https://wiki.python.org.br/ExerciciosListas
 
 Faça um programa que receba a temperatura média de cada mês do ano e armazene-as em uma lista.
-Após isto, calcule e MOSTRE A MÉDIA ANUAL das temperaturas e MOSTRE TODAS AS TEMPERATURAS ACIMA DA MÉDIA ANUAL,
-e em que mês elas ocorreram (mostrar o mês por extenso: 1 – Janeiro, 2 – Fevereiro, . . . ).
+Após isto, calcule e MOSTRE A MÉDIA ANUAL das temperaturas e MOSTRE TODAS AS TEMPERATURAS ACIMA
+ DA MÉDIA ANUAL, e em que mês elas ocorreram 
+ (mostrar o mês por extenso: 1 – Janeiro, 2 – Fevereiro, . . . ).
 
 -as temperaturas só serão dadas em inteiro
 -todos os meses do ano serão passados à funçao, começando de janeiro e terminando em dezembro.
@@ -42,8 +43,29 @@ e em que mês elas ocorreram (mostrar o mês por extenso: 1 – Janeiro, 2 – F
     11 - Novembro:      33°
 
 """
-
-
+#from statistics import mean
+import statistics
 def temperaturas_acima_da_media():
     """Escreva aqui sua solução: """
+    temperaturas = []
+    temperaturas_acima = []
+    ordem_mes = 0
+    meses = 'Janeiro:', 'Fevereiro:', 'Março:', 'Abril:', 'Maio:', 'Junho:', 'Julho:', 'Agosto:', 'Setembro:', 'Outubro:', 'Novembro:', 'Dezembro:'
+    for mes in meses:
+        temper = int(input(f'Informe a temperatura registrada no mes de {mes}: '))
+        temperaturas.append(temper)
+        
+    media_temperaturas = statistics.mean(temperaturas)
+    print(f'Média anual: {media_temperaturas:.2f} Graus')
 
+    for temp in temperaturas:
+        #temp = int(temp)
+        if temp > media_temperaturas:
+            temperaturas_acima.append(f'{ordem_mes + 1:2d} - {meses[ordem_mes]:<14s} {temp:2d}°')
+        ordem_mes += 1
+        
+    for idx in range(len(temperaturas_acima)):
+        print(temperaturas_acima[idx])
+
+    return
+  
