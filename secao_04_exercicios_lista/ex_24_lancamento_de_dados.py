@@ -35,5 +35,24 @@ Mostre na tela:
 """
 
 
+from typing import Counter
+
+
 def lancar_dados(*valor_lancamentos):
     """Escreva aqui em baixo a sua solução"""
+        
+    lancamentos = Counter(valor_lancamentos)
+    mais_sorteado, vezes = lancamentos.most_common(1)[0]
+    #tam = lancamentos.total()
+    tam = len(valor_lancamentos)
+    lances = sorted(lancamentos)
+    
+
+    #saidas
+    print(f'O dado foi lançado {tam} vezes')
+    for chave in lances:
+        print(f'O número {chave} caiu {lancamentos[chave]} vezes')
+
+    print(f'O lado com o número {mais_sorteado} caiu mais vezes ({vezes} vezes)')
+
+#lancar_dados(6, 6, 2, 5, 4, 5, 3, 3, 5, 1, 4, 5, 4, 4, 2, 4, 6, 3, 6, 1,)
