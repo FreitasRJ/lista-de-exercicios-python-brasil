@@ -23,4 +23,13 @@ Faça uma função que informe a quantidade de dígitos de um determinado númer
     1
 
 """
-
+def imprimir_qtde_digitos_do_inteiro(numero):
+    
+    if not float(numero).is_integer():
+        print('O valor informado não é um inteiro')
+        return
+    mensagem = len(str(numero).replace('-',''))
+    return mensagem
+    
+    
+#print(imprimir_qtde_digitos_do_inteiro(-272.7))
