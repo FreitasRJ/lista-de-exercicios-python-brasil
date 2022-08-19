@@ -13,3 +13,10 @@ Faça um programa para imprimir:
 para um n informado pelo usuário. Use uma função que receba um valor n inteiro e imprima até a n-ésima linha.
 
 """
+n = int(input('Digite um número: '))
+for linha in range(n+1):
+    lin = str(linha)
+    saida = ''
+    for n in range(linha):
+        saida = saida + lin + '  '
+    print(saida)
