@@ -47,11 +47,11 @@ def validar_cpf(cpf):
         digito_verificador_1 = 0
     
     # acrescentar o digito verificador aos 9 primeiros numeros do cpf.
-    _cpf = (cpf[0:9])
-    _cpf.append(digito_verificador_1)
+    cpf_9_digitos = (cpf[0:9])
+    cpf_9_digitos.append(digito_verificador_1)
     
     # identifica o segundo digito verificador.
-    soma_segundo_peso = sum(digito * peso for digito, peso in zip(_cpf, range(0,10)))
+    soma_segundo_peso = sum(digito * peso for digito, peso in zip(cpf_9_digitos, range(0,10)))
     digito_verificador_2 = soma_segundo_peso % 11
 
     if digito_verificador_2 == 10:
