@@ -37,7 +37,7 @@ def inverter_escada(nome:str):
     """Escreva aqui em baixo a sua solução"""
     tam = len(nome)
     print(nome)
-    for i in range(tam):
+    for i in range(tam-1):
         nome = nome[:-1]
         print(nome)
 
