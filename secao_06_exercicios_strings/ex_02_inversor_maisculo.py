@@ -21,3 +21,11 @@ letras maiúsculas ou minúsculas.
 
 def inversor(nome: str) -> str:
     """ Escreva seu código aqui embaixo """
+    nome = nome.upper()
+    tam = len(nome)
+    invertido = ""
+    for idx in range(tam, 0,-1):
+        invertido += nome[idx-1]
+    print(f"'{invertido}'")
+
+#inversor('MARIa')
